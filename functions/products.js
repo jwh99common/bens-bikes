@@ -5,7 +5,7 @@ export async function onRequest(context) {
   
   const { results } = await db.prepare("SELECT * FROM bens_bikes_products").all();
   
-  console.log(`📦 D1 returned ${results.length} products`);
+
   
   
   const products = results.map(p => ({
@@ -18,7 +18,11 @@ export async function onRequest(context) {
     images: p.images ? JSON.parse(p.images) : [],
     longDescription: p.longDescription
   }));
-  console.log(`📦 D1 returned ${products} `);
 
+  
+  console.log("📦 D1 returned products:");
+  products.forEach((product, i) => {
+    console.log(`🔹 Product ${i + 1}:`, JSON.stringify(product, null, 2));
+  });
   return Response.json(products);
 }
