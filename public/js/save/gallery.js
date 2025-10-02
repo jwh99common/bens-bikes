@@ -7,7 +7,7 @@ let currentCategory = 'all';
 
 async function loadProducts() {
   try {
-    const response = await fetch('/api/products', {
+    const response = await fetch('/products', {
       headers: {
         'Content-Type': 'application/json'
       },
