@@ -5,7 +5,7 @@
     "description": "Use my extensive network to find your perfect bike.",
     "price": 100,
     "category": "Find A Bike",
-    "image": "/r2-images/b1.jpg",
+    "image": "/r2-images/ben-cyr-1.jpg",
     "long_description": ""
   },
   {
@@ -13,7 +13,7 @@
     "title": "Fix A Bike",
     "description": "We can fix your bike",    "price": 30,
     "category": "drawing",
-    "image": "/r2-images/ben-cyr-1.jpg",
+    "image": "/r2-images/ben-cyr-2.jpg",
     "long_description": "we can fix your bike"
   },
   {
@@ -22,8 +22,8 @@
     "description": "We can look at your needs and recommend a bike.",
     "price": 25,
     "category": "digital",
-    "image": "/r2-images/trussel.png",
-    "long_description": "Part of a limited series of digital landscapes inspired by the Lake District. Created using digital painting techniques and printed as a high-quality giclee print on archival paper. Limited to 50 prints, each signed and numbered."
+    "image": "/r2-images/ben-cyr-3.jpg",
+    "long_description": "copy for recommend a bike"
   },
   {
     "id": 4,
@@ -31,7 +31,7 @@
     "description": "We can take you on a Green Lane Expedition.",
     "price": 35,
     "category": "photography",
-    "image": "/r2-images/r2-g1.png",
-    "long_description": "We can expand your horizons with a Green Lane Expedition. Explore scenic off-road routes and enjoy the beauty of nature while riding through countryside trails. Suitable for all skill levels, our guided tours provide a safe and enjoyable experience."
+    "image": "/r2-images/bb-green-1.jpg",
+    "long_description": ""
   }  
 ]
