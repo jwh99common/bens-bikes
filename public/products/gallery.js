@@ -56,9 +56,7 @@ function renderProducts(productList) {
           <span class="product-price">£${product.price}</span>
           <span class="product-category">${product.category}</span>
         </div>
-        <a class="buy-on-etsy" href="https://etsy.com/shop/YourShop" target="_blank" onclick="event.stopPropagation();">
-          Buy on Etsy
-        </a>
+ 
       </div>
     </div>
   `).join('');

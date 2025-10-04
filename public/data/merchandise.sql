@@ -1,6 +1,6 @@
 DELETE FROM bens_bikes_merchandise;
-INSERT INTO bens_bikes_merchandise (id, title, description, long_description, image, price, category) VALUES (1, 'T-Shirts', 'Use my extensive network to find your perfect bike.', '', '/r2-images/bb-merch-t1.png', 100, 'Find A Bike');
-INSERT INTO bens_bikes_merchandise (id, title, description, long_description, image, price, category) VALUES (2, 'Hats', 'We can fix your bike', 'we can fix your bike', '/r2-images/bb-merch-h1.jpg', 30, 'drawing');
-INSERT INTO bens_bikes_merchandise (id, title, description, long_description, image, price, category) VALUES (3, 'Key-Rings', 'We can look at your needs and recommend a bike.', 'Part of a limited series of digital landscapes inspired by the Lake District. Created using digital painting techniques and printed as a high-quality giclee print on archival paper. Limited to 50 prints, each signed and numbered.', '/r2-images/trussel.png', 25, 'digital');
-INSERT INTO bens_bikes_merchandise (id, title, description, long_description, image, price, category) VALUES (4, 'Mugs', 'We can take you on a Green Lane Expedition.', 'We can expand your horizons with a Green Lane Expedition. Explore scenic off-road routes and enjoy the beauty of nature while riding through countryside trails. Suitable for all skill levels, our guided tours provide a safe and enjoyable experience.', '/r2-images/r2-g1.png', 35, 'photography');
+INSERT INTO bens_bikes_merchandise (id, title, description, long_description, image, price, category) VALUES (1, 'T-Shirts', '', '', '/r2-images/bb-merch-1.jpg', 100, 'Find A Bike');
+INSERT INTO bens_bikes_merchandise (id, title, description, long_description, image, price, category) VALUES (2, 'Hats', '', '', '/r2-images/bb-merch-2.jpg', 30, 'drawing');
+INSERT INTO bens_bikes_merchandise (id, title, description, long_description, image, price, category) VALUES (3, 'Mugs', '', '', '/r2-images/bb-merch-3.jpg', 25, 'digital');
+INSERT INTO bens_bikes_merchandise (id, title, description, long_description, image, price, category) VALUES (4, 'Keyrings', '', '', '/r2-images/bb-merch-4.jpg', 35, 'photography');
 SELECT * FROM bens_bikes_merchandise;

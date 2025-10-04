@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Art Gallery – Food Bank Art Work</title>
+  <title>Bens Bikes – Motorcycle Services</title>
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="/css/gallery.css" />
 </head>
@@ -12,63 +12,22 @@
     <div class="container">
       <div class="header-content">
         <div class="logo">
-          <img href="/" src="/r2-images/BB-logo.png" alt="Ben's Bikes logo" class="logo-image" />
+          <img src="/r2-images/BB-logo.png" alt="Ben's Bikes logo" class="logo-image" />
           <span class="logo-text">Ben's Bikes: Services</span>
         </div>
 
-
-        <!--
-        --<nav class="main-nav">
-          <a href="/index.html" class="active">Gallery</a>
-          <a href="/blog/">Blog</a>
-        </nav>
-        -->
-        
-        <nav class="main-nav">
-          <a href="/">Home</a>
-          <a href="/products/">For Sale</a>
-          <a href="/services/">Services</a>
-          <a href="/merchandise/">Merchandise</a>
-          <a href="/blog/">Blog</a>
-          <a href="/contact/">Contact</a>
-          <a href="/terms/">Terms</a>
-        </nav>
-
-
-
-
-
+        <!-- Navigation will be injected here -->
+        <div id="nav-placeholder"></div>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <!--
-    <section class="mission-statement">
-      
-      <h2>Supporting Local Food Banks Through Art</h2>
-      <p>
-        Every purchase goes directly to helping families in need. Browse our
-        collection and make a difference.
-      </p>
-    </section>
-    -->
-
-    <!-- Filter buttons -->
-    <!--<div class="filter-bar">
-      <button class="filter-btn active" data-category="all">All</button>
-      <button class="filter-btn" data-category="ROAD">ROAD</button>
-      <button class="filter-btn" data-category="MTX">MTX</button>
-      <button class="filter-btn" data-category="RESTORE">RESTORE</button>
-    </div>
-    -->
-
-    <!-- Product gallery -->
     <div class="gallery" id="gallery">
       <!-- Products will be inserted here by JavaScript -->
     </div>
 
-    <!-- Impact stats -->
+    <!--
     <section class="stats">
       <h2>Our Impact So Far</h2>
       <div class="stats-grid">
@@ -90,9 +49,9 @@
         </div>
       </div>
     </section>
+  -->
   </main>
 
-  <!-- Modal for product details -->
   <div id="productModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
@@ -110,6 +69,7 @@
           <span id="modalPrice" class="product-price"></span>
           <span id="modalCategory" class="product-category"></span>
         </div>
+        <!--
         <a
           id="modalEtsyLink"
           class="buy-on-etsy"
@@ -118,11 +78,13 @@
         >
           Buy on Etsy
         </a>
+      -->
       </div>
     </div>
   </div>
 
   <!-- JavaScript entry point -->
   <script type="module" src="./main.js"></script>
+  <script src="/js/inject-nav.js"></script>
 </body>
 </html>

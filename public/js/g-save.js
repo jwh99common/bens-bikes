@@ -7,7 +7,7 @@ let currentCategory = 'all';
 
 async function loadProducts() {
   try {
-    const response = await fetch('/api/services', {
+    const response = await fetch('/api/products', {
       headers: {
         'Content-Type': 'application/json'
       },
@@ -56,6 +56,9 @@ function renderProducts(productList) {
           <span class="product-price">£${product.price}</span>
           <span class="product-category">${product.category}</span>
         </div>
+        <a class="buy-on-etsy" href="https://etsy.com/shop/YourShop" target="_blank" onclick="event.stopPropagation();">
+          Buy on Etsy
+        </a>
       </div>
     </div>
   `).join('');
@@ -80,4 +83,5 @@ function getProductById(id, productList) {
   return productList.find(p => p.id === id);
 }
 
+console.log("Gallery script exited.");
 export { loadProducts, renderProducts, setupFilters,  getProductById};

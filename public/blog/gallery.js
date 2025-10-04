@@ -7,7 +7,7 @@ let currentCategory = 'all';
 
 async function loadProducts() {
   try {
-    const response = await fetch('/api/services', {
+    const response = await fetch('/api/gallery', {
       headers: {
         'Content-Type': 'application/json'
       },
@@ -49,6 +49,7 @@ function renderProducts(productList) {
   gallery.innerHTML = filteredProducts.map(product => `
     <div class="product-card" data-id="${product.id}">
       <img class="product-image" src="${product.image}" alt="${product.title}">
+      <!--
       <div class="product-info">
         <h3 class="product-title">${product.title}</h3>
         <p class="product-description">${product.description}</p>
@@ -56,7 +57,8 @@ function renderProducts(productList) {
           <span class="product-price">£${product.price}</span>
           <span class="product-category">${product.category}</span>
         </div>
-      </div>
+       </div>
+       -->
     </div>
   `).join('');
 

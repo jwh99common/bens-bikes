@@ -46,7 +46,7 @@ export function openModal(product) {
   document.getElementById('modalDescription').textContent = product.description;
   document.getElementById('modalPrice').textContent = `£${product.price}`;
   document.getElementById('modalCategory').textContent = product.category;
-  document.getElementById('modalEtsyLink').href = "https://etsy.com/shop/YourShop";
+  //document.getElementById('modalEtsyLink').href = "https://etsy.com/shop/YourShop";
 
   updateModalImage();
   modal.classList.add('open');

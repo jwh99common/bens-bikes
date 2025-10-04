@@ -8,8 +8,6 @@ const blogList = document.getElementById('blog-list');
 // Clear any existing content
 blogList.innerHTML = '';
 
-console.log ("exiting blog.js");
-
 // Loop through each post and render its preview
 posts.forEach(post => {
   // Create a wrapper div for the post preview
@@ -39,6 +37,3 @@ posts.forEach(post => {
   // Append the post preview to the blog list container
   blogList.appendChild(postDiv);
 });
-
-
-console.log ("exiting blog.js");

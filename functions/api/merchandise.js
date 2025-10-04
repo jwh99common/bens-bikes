@@ -4,10 +4,7 @@ export async function onRequest(context) {
   console.log("🔍 D1 query triggered from /merchandise");
   
   const { results } = await db.prepare("SELECT * FROM bens_bikes_merchandise").all();
-  
-
-  
-  
+    
   const products = results.map(p => ({
     id: p.id,
     title: p.title,
