@@ -199,3 +199,72 @@ header {
   color: #0077cc;
 }
 
+/* Blog Modal Layout */
+#blogModal .modal-content {
+  max-width: 600px;
+  margin: 5% auto;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+#blogModal .modal-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+#blogModal .modal-thumb {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+#blogModal h2#modalTitle {
+  font-size: 1.4rem;
+  margin: 0;
+  color: #2c3e50;
+}
+
+#blogModal .modal-body {
+  padding: 20px;
+}
+
+#blogModal .modal-author,
+#blogModal .modal-date {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin: 5px 0;
+}
+
+#blogModal .modal-content-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-top: 15px;
+}
+
+#blogModal .modal-counter {
+  font-size: 0.8rem;
+  color: #aaa;
+  text-align: right;
+  margin-top: 10px;
+}
+
+#blogModal .close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 24px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+#blogModal .close:hover {
+  color: #000;
+}

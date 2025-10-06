@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bens Bikes – Motorcycle Services</title>
+  <title>Ben's Bikes – Motorcycle Services</title>
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="/css/gallery.css" />
 </head>
@@ -13,10 +13,8 @@
       <div class="header-content">
         <div class="logo">
           <img src="/r2-images/BB-logo.png" alt="Ben's Bikes logo" class="logo-image" />
-          <span class="logo-text">Ben's Bikes: For Sale</span>
+          <span class="logo-text">Ben's Bikes: Blog</span>
         </div>
-
-        <!-- Navigation will be injected here -->
         <div id="nav-placeholder"></div>
       </div>
     </div>
@@ -24,52 +22,25 @@
 
   <main class="container">
     <div class="gallery" id="gallery">
-      <!-- Products will be inserted here by JavaScript -->
+      <!-- Blog cards will be injected here -->
     </div>
-
-    <!--
-    <section class="stats">
-      <h2>Our Impact So Far</h2>
-      <div class="stats-grid">
-        <div class="stat-item">
-          <span class="stat-number">127</span>
-          <div class="stat-label">Artworks Sold</div>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">£4,250</span>
-          <div class="stat-label">Raised for Food Banks</div>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">2,800</span>
-          <div class="stat-label">Meals Provided</div>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">15</span>
-          <div class="stat-label">Families Helped</div>
-        </div>
-      </div>
-    </section>
-  -->
   </main>
 
-  <div id="productModal" class="modal">
+  <!-- Blog Modal -->
+  <div id="blogModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
+
       <div class="modal-header">
+        <img id="modalImage" class="modal-thumb" src="" alt="" />
         <h2 id="modalTitle"></h2>
       </div>
+
       <div class="modal-body">
-        <div class="image-carousel">
-          <button id="prevImage" class="carousel-btn left-btn" aria-label="Previous image">‹</button>
-          <img id="modalImage" class="modal-image" src="" alt="" />
-          <button id="nextImage" class="carousel-btn right-btn" aria-label="Next image">›</button>
-        </div>
-        <p id="modalDescription"></p>
-        <div class="product-details">
-          <span id="modalPrice" class="product-price"></span>
-          <span id="modalCategory" class="product-category"></span>
-        </div>
-        
+        <p id="modalAuthor" class="modal-author"></p>
+        <p id="modalDate" class="modal-date"></p>
+        <div id="modalContent" class="modal-content-text"></div>
+        <div id="imageCounter" class="modal-counter"></div>
       </div>
     </div>
   </div>
