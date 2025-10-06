@@ -1,40 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const selector = document.getElementById('adminType');
-  selector.addEventListener('change', () => {
-    const type = selector.value;
-    loadAdmin(type);
-  });
+  const form = document.getElementById('blogForm');
+  const status = document.getElementById('status');
 
-  loadAdmin('blogs'); // default
-  setupImageUpload();
-});
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form));
 
-function loadAdmin(type) {
-  const endpoint = `/api/${type}`;
-  const container = document.getElementById('adminList');
-  const title = document.getElementById('adminTitle');
-  title.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+    // ✅ Auto-generate slug from title
+    data.slug = data.title?.toLowerCase()
+      .replace(/\s+/g, '-')       // replace spaces with hyphens
+      .replace(/[^\w-]/g, '')     // remove non-word characters
+      .replace(/--+/g, '-')       // collapse multiple hyphens
+      .trim();
 
-  fetch(endpoint)
-    .then(res => res.json())
-    .then(items => {
-      container.innerHTML = '';
-      items.forEach(item => {
-        const div = document.createElement('div');
-        div.className = 'admin-item';
-        div.innerHTML = `
-          <strong>${item.name || item.title}</strong><br />
-          ${item.description || item.content || ''}<br />
-          <button onclick="editItem('${type}', ${item.id})">Edit</button>
-          <button onclick="deleteItem('${type}', ${item.id})">Delete</button>
-        `;
-        container.appendChild(div);
+    console.log("📤 Sending blog data:", data);
+
+    try {
+      const res = await fetch('/api/admin', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
       });
-    })
-    .catch(err => {
-      console.error(`❌ Failed to load ${type}:`, err);
-    });
 
-  const addBtn = document.getElementById('addItem');
-  addBtn.onclick = () => alert(`Add ${type} — scaffold coming soon`);
-}
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      status.textContent = '✅ Blog posted successfully!';
+      form.reset();
+    } catch (err) {
+      status.textContent = `❌ Failed to post: ${err.message}`;
+    }
+  });
+});

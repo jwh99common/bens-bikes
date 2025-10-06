@@ -3,55 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Dashboard – Ben’s Bikes</title>
+  <title>Admin – Post Blog</title>
   <link rel="stylesheet" href="/css/main.css" />
+  <!--<link rel="stylesheet" href="/admin/admin.css" />-->
+
 </head>
 <body>
-
   <header>
     <div class="container">
       <div class="header-content">
         <div class="logo">
           <img src="/r2-images/BB-logo.png" alt="Ben's Bikes logo" class="logo-image" />
-          <span class="logo-text">Ben's Bikes: Admin Page</span>
+          <span class="logo-text">Ben's Bikes: Admin</span>
         </div>
+
+        <!-- Navigation will be injected here -->
         <div id="nav-placeholder"></div>
       </div>
     </div>
   </header>
 
+
   <main class="container">
-    <section id="adminSelector">
-      <label for="adminType">Choose what to manage:</label>
-      <select id="adminType">
-        <option value="blogs">Blog Posts</option>
-        <option value="products">Products</option>
-        <option value="services">Services</option>
-        <option value="merchandise">Merchandise</option>
-      </select>
-    </section>
-
-    <section id="adminPanel">
-      <h2 id="adminTitle">Blog Posts</h2>
-      <div id="adminList"></div>
-      <button id="addItem">Add Entry</button>
-    </section>
-
-    <section id="imageAdmin">
-      <h2>Image Uploads</h2>
-      <form id="uploadForm">
-        <input type="file" name="file" accept="image/*" required />
-        <input type="text" name="alt" placeholder="Alt text" />
-        <input type="text" name="tags" placeholder="Tags (comma-separated)" />
-        <button type="submit">Upload to R2</button>
-      </form>
-      <div id="imageList"></div>
-    </section>
+    <form id="blogForm">
+      <label>Title: <input type="text" name="title" required /></label>
+      <label>Author: <input type="text" name="author" required /></label>
+      <label>Image URL: <input type="text" name="image" /></label>
+      <label>Content:<br />
+        <textarea name="content" rows="6" required></textarea>
+      </label>
+      <button type="submit">Post to D1</button>
+    </form>
 
     <div id="status"></div>
   </main>
 
   <script type="module" src="./main.js"></script>
   <script src="/js/inject-nav.js"></script>
+
 </body>
 </html>
