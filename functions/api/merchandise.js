@@ -19,8 +19,9 @@ export async function onRequest(context) {
   
   console.log("📦 D1 returned merchandise:");
   products.forEach((product, i) => {
-    console.log(`🔹 Product ${i + 1}: ${product.title} $${product.image}`);
+    console.log(`🔹 Product ${i + 1}:\n${JSON.stringify(product, null, 2)}`);
   });
+
 
   return Response.json(products);
 }

@@ -6,28 +6,29 @@ async function initGallery() {
   const products = await loadProducts();
 
   renderProducts(products);
-  setupFilters(products);
-  setupModal();
+  //setupFilters(products);
+  //setupModal();
 
   
   console.log("InitGallery called with:", products);
 
   // Handle click events for modal opening
-  document.getElementById('gallery').addEventListener('click', (e) => {
-    console.log("Gallery clicked:", e.target);
+ // document.getElementById('gallery').addEventListener('click', (e) => {
+  //  console.log("Gallery clicked:", e.target);
 
-    const card = e.target.closest('.product-card');
-    console.log("Closest .product-card:", card);
+  //  const card = e.target.closest('.product-card');
+  //  console.log("Closest .product-card:", card);
 
-    if (card && card.dataset.id) {
-      const productId = parseInt(card.dataset.id);
-      const product = products.find(p => p.id === productId);
+  //  if (card && card.dataset.id) {
+  //    const productId = parseInt(card.dataset.id);
+  //    const product = products.find(p => p.id === productId);
 
-      if (product) openModal(product);
-    } else {
-      console.log("No valid card or data-id found");
-    }
-  });
+  //    if (product) openModal(product);
+  //  } else {
+  //    console.log("No valid card or data-id found");
+  //  }
+  //});
+
 }
 
 document.addEventListener('DOMContentLoaded', initGallery);
