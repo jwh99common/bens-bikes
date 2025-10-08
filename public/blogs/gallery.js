@@ -46,16 +46,17 @@ function renderProducts(productList) {
     ? productList
     : productList.filter(p => p.category === currentCategory);
 
-  gallery.innerHTML = filteredProducts.map(product => `
-    <div class="blog-card" data-id="${product.id}">
-      <img class="blog-image" src="${product.image}" alt="${product.title}">
-      <div class="blog-info">
-        <h3 class="blog-title">${product.title}</h3>
-        <p class="blog-author">By ${product.author}</p>
-        <p class="blog-preview">${product.content.slice (0,20)}...</p>
+    gallery.innerHTML = filteredProducts.map(product => `
+      <div class="blog-card horizontal" data-id="${product.id}">
+        <img class="blog-thumb" src="${product.image}" alt="${product.title}">
+        <div class="blog-info">
+          <h3 class="blog-title">${product.title}</h3>
+          <p class="blog-author">By ${product.author}</p>
+          <p class="blog-preview">${product.content.slice(0, 80)}...</p>
+        </div>
       </div>
-    </div>
-  `).join('');
+    `).join('');
+
  
   console.log("Rendering products:", filteredProducts);
 }
