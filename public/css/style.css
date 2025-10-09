@@ -15,7 +15,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  /*padding: 0 0px;*/
 }
 
 /* === Header === */
@@ -38,7 +38,7 @@ header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 20px;
+ /* padding: 20px; */
 }
 
 .logo-image {
@@ -244,10 +244,6 @@ header {
   background: linear-gradient(45deg, #f0f2f5, #e4e6ea);
 }
 
-
-
-
-
 .blog-card.horizontal {
   display: flex;
   align-items: flex-start;
@@ -304,22 +300,51 @@ header {
   background: white;
   border-radius: 15px;
   overflow: hidden;
+  align-items: center;
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border: 1px solid #ddd; /* 👈 This adds the visible box */
+  padding: 15px;           /* 👈 Optional: adds breathing room inside */
   transition: all 0.3s ease;
   cursor: pointer;
 }
+/* tighter lao
+.product-card {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  max-width: 600px;
+}
+  */
+
+.product-image {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  align-items:  center;
+}
+
+/*.product-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}*/
 
 .product-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 30px rgba(0,0,0,0.15);
 }
 
-.product-image {
+/*.product-image {
   width: 100%;
   height: 300px;
   object-fit: cover;
   background: linear-gradient(45deg, #f0f2f5, #e4e6ea);
-}
+}*/
 
 .product-info {
   padding: 20px;
@@ -358,6 +383,12 @@ header {
   font-size: 0.8rem;
   font-weight: 500;
 }
+.product-card:hover {
+  border-color: #27ae60;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+
+
 /* Filter/Category buttons */
 .filter-bar {
   display: flex;
@@ -402,7 +433,7 @@ header {
 }
 
 /* === Modal === */
-/* === Modal === */
+/* Modal backdrop */
 .modal {
   display: none;
   position: fixed;
@@ -414,10 +445,12 @@ header {
   background-color: rgba(0,0,0,0.5);
 }
 
+/* Show modal */
 .modal.open {
   display: block;
 }
 
+/* Modal box */
 .modal-content {
   background: white;
   margin: 5% auto;
@@ -425,26 +458,38 @@ header {
   border-radius: 15px;
   width: 90%;
   max-width: 600px;
+  height: 500px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden; /* Prevent image or arrows from spilling out */
 }
 
+/* Modal header */
 .modal-header {
   padding: 20px;
   border-bottom: 1px solid #eee;
 }
 
+/* Modal body */
 .modal-body {
   padding: 20px;
+  flex-grow: 1;
 }
 
+/* Image inside modal */
 .modal-thumb {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
+  height: 250px;
+  object-fit: scale-down; /* Use 'cover' if you want it to fill the space */
   border-radius: 10px;
   margin-bottom: 20px;
+  flex-shrink: 0;
+  display: block;
 }
 
+/* Author and date */
 .modal-author,
 .modal-date {
   font-size: 0.85rem;
@@ -452,6 +497,7 @@ header {
   margin-bottom: 8px;
 }
 
+/* Main content text */
 .modal-content-text {
   font-size: 1rem;
   line-height: 1.6;
@@ -459,11 +505,34 @@ header {
   margin-top: 10px;
 }
 
+/* Counter or pagination */
 .modal-counter {
   font-size: 0.85rem;
   color: #7f8c8d;
   margin-top: 10px;
   text-align: right;
+}
+
+/* Navigation arrows */
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #333;
+  background: rgba(255,255,255,0.8);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.modal-nav.left {
+  left: 10px;
+}
+
+.modal-nav.right {
+  right: 10px;
 }
 
 .close {
@@ -515,8 +584,8 @@ header {
 .site-footer {
   background: #f9f7f7;
   color: #010000;
-  padding: 40px 0;
-  text-align: left;
+  padding: 0px 0;
+  text-align: center;
   font-size: 0.9rem;
    
   width: 100%;
@@ -558,17 +627,131 @@ header {
     font-size: 0.9rem;
   }
 
+  
   .gallery {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
   }
-
+  
   .modal-content {
     width: 95%;
     margin: 10% auto;
   }
-
+  
   .cart-panel {
     width: 100%;
   }
+}
+/* Modal backdrop */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal.open {
+  display: block;
+}
+
+/* Modal box */
+.modal-content {
+  background: white;
+  margin: 5% auto;
+  padding: 0;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+  height: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden; /* Prevent image or arrows from spilling out */
+}
+
+/* Modal header */
+.modal-header {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Modal body */
+.modal-body {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Image carousel container */
+.image-carousel {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  margin-bottom: 20px;
+}
+
+/* Modal image */
+.modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Carousel arrows */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(255,255,255,0.8);
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.left-btn {
+  left: 10px;
+}
+
+.right-btn {
+  right: 10px;
+}
+
+/* Product details */
+.product-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: #34495e;
+}
+
+.product-price {
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.product-category {
+  font-style: italic;
+  color: #7f8c8d;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
 }
