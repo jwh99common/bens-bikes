@@ -49,16 +49,7 @@ function renderProducts(productList) {
   gallery.innerHTML = filteredProducts.map(product => `
     <div class="product-card" data-id="${product.id}">
       <img class="product-image" src="${product.image}" alt="${product.title}">
-      <!--
-      <div class="product-info">
-        <h3 class="product-title">${product.title}</h3>
-        <p class="product-description">${product.description}</p>
-        <div class="product-details">
-          <span class="product-price">£${product.price}</span>
-          <span class="product-category">${product.category}</span>
-        </div>
-       </div>
-       -->
+ 
     </div>
   `).join('');
 

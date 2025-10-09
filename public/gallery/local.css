@@ -1,0 +1,22 @@
+/* === Gallery Page Overrides === */
+
+/* Make product images larger for visual emphasis */
+.product-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* Optional: widen the gallery grid and spacing */
+.gallery {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+/* Optional: increase card padding or shadow */
+.product-card {
+  padding: 20px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.12);
+}
