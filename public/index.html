@@ -3,9 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ben's Bikes – Home</title>
-  <link rel="stylesheet" href="/css/base.css" />
-  
+  <title>Ben's Bikes – About Us</title>
+
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/products.css">
+  <link rel="stylesheet" href="/css/cart.css">
+  <link rel="stylesheet" href="/css/modal.css">
+  <link rel="stylesheet" href="/css/blog.css">
+  <style>
+    .about-section {
+      padding: 60px 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-text h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #3498db;
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+
+    .fade-carousel {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+      /**box-shadow: 0 4px 20px rgba(0,0,0,0.08);**/
+    }
+
+    .fade-track {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .fade-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+
+    .fade-slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+
+
+.fade-track {
+  aspect-ratio: 4 / 3;
+}
+
+.fade-slide {
+  object-fit: contain;
+}
+
+    
+  </style>
 </head>
 <body>
   <header>
@@ -15,39 +87,63 @@
           <img src="/r2-images/BB-logo.png" alt="Ben's Bikes logo" class="logo-image" />
           <span class="logo-text">Ben's Bikes</span>
         </div>
-
-        <!-- Navigation will be injected here -->
         <div id="nav-placeholder"></div>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <section class="hero">
-      <h1>Welcome to Ben's Bikes</h1>
-      <p>Check out what we have for Sale</p>
-      <a href="/products/" class="cta-button">For Sale</a>
+    <!--<section class="hero">
+      <h1>About Us</h1>
+      <p>Ben’s Bikes is built for creators, riders, and anyone who values clarity, craftsmanship, and community.</p>
     </section>
+  -->
+    <section class="about-section">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>Our Story</h2>
+          <p>Founded in Bedfordshire, Ben’s Bikes began as a passion project and grew into a creator-grade workshop. We specialize in custom builds, modular upgrades, and transparent service — empowering riders to go further with confidence.</p>
+          <p>Whether you're tuning your trail bike or launching a fleet, we blend hands-on expertise with future-proof tools. Every pedal stroke matters, and every customer is part of our ride.</p>
+          <p>We believe in frictionless service, iterative design, and celebrating the joy of movement. Our team is always listening, always iterating, and always ready to help you ride further.</p>
+        </div>
+        <div class="fade-carousel">
+          <div class="fade-track">
+            <img src="/r2-images/bb-gallery-1.jpg" alt="Workshop view" class="fade-slide active" />
+            <img src="/r2-images/bb-gallery-2.jpg" alt="Team repairing bikes" class="fade-slide" />
+            <img src="/r2-images/bb-gallery-3.jpg" alt="Custom build in progress" class="fade-slide" />
+            <img src="/r2-images/bb-gallery-4.jpg" alt="Finished custom bike" class="fade-slide" /> 
+            <img src="/r2-images/bb-gallery-5.jpg" alt="Riders on a trail" class="fade-slide" />
+            <img src="/r2-images/bb-gallery-6.jpg" alt="Riders on a trail" class="fade-slide" />
+            <img src="/r2-images/bb-gallery-7.jpg" alt="Riders on a trail" class="fade-slide" />
+            <img src="/r2-images/bb-gallery-8.jpg" alt="Riders on a trail" class="fade-slide" />
+            <img src="/r2-images/bb-gallery-9.jpg" alt="Riders on a trail" class="fade-slide" />
+            <img src="/r2-images/bb-gallery-5.jpg" alt="Riders on a trail" class="fade-slide" />
+            <img src="/r2-images/ben-cyr-1.jpg" alt="Riders on a trail" class="fade-slide" />
+            <img src="/r2-images/ben-cyr-2.jpg" alt="Riders on a trail" class="fade-slide" />  
+            <img src="/r2-images/ben-cyr-3.jpg" alt="Riders on a trail" class="fade-slide" />
+            
 
-    <section class="quick-links">
-      <div class="link-card">
-        <h3>Find a Bike</h3>
-        <p>Use our network to discover your perfect ride.</p>
-        <a href="/services/">View Services</a>
-      </div>
-      <div class="link-card">
-        <h3>Read our Blog</h3>
-        <p>For the most recent news.</p>
-        <a href="/blogs/">Browse Blog</a>
+
+            
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-
-
-  <!-- Inject navigation -->
   <script src="/js/inject-nav.js"></script>
   <script src="/js/inject-footer.js"></script>
-</body>
+  <script>
+    const slides = document.querySelectorAll('.fade-slide');
+    let current = 0;
 
+    function showNextSlide() {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }
+
+    setInterval(showNextSlide, 2000); // Change every 4 seconds
+  </script>
+</body>
 </html>
