@@ -9,13 +9,13 @@
   margin-bottom: 20px;
 }*/
 .product-image {
+  aspect-ratio: 16 / 9;
   width: 100%;
-  height: 500px;
-  object-fit: cover;
-  overflow: hidden;
+  object-fit: contain;
   border-radius: 12px;
   display: block;
 }
+
 
 /* Optional: widen the gallery grid and spacing */
 .gallery {
