@@ -1,20 +1,28 @@
 let currentCategory = 'all';
 
 /**
- * Loads product data from the API.
+ * Loads product data from a JSON file.
  * Returns an array of product objects or logs an error if fetch fails.
  */
+
 async function loadProducts() {
   try {
     const response = await fetch('/api/merchandise', {
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json'
+      },
       cache: 'no-store'
     });
 
-    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
 
     const products = await response.json();
-    if (!Array.isArray(products)) throw new Error('Invalid product format: expected an array');
+
+    if (!Array.isArray(products)) {
+      throw new Error('Invalid product format: expected an array');
+    }
 
     return products;
   } catch (error) {
@@ -23,10 +31,15 @@ async function loadProducts() {
   }
 }
 
-/**
- * Renders product cards based on current category filter.
- * Cards include modal trigger and cart button.
- */
+
+
+
+// Load and render products
+loadProducts().then(products => {
+  renderProducts(products);
+});
+
+// Render products based on current filter
 function renderProducts(productList) {
   const gallery = document.getElementById('gallery');
   const filteredProducts = currentCategory === 'all'
@@ -51,10 +64,7 @@ function renderProducts(productList) {
   console.log("Rendering products:", filteredProducts);
 }
 
-/**
- * Sets up category filter buttons.
- * Re-renders products on filter change.
- */
+// Setup category filters
 function setupFilters(productList) {
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -66,16 +76,9 @@ function setupFilters(productList) {
   });
 }
 
-/**
- * Utility to get a product by ID.
- */
+// Get product by ID
 function getProductById(id, productList) {
   return productList.find(p => p.id === id);
 }
 
-export {
-  loadProducts,
-  renderProducts,
-  setupFilters,
-  getProductById
-};
+export { loadProducts, renderProducts, setupFilters,  getProductById};
