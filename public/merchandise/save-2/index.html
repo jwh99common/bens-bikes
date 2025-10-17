@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ben's Bikes – Services</title>
+  <title>Ben's Bikes – Products for Sale</title>
+  <!--<link rel="stylesheet" href="/css/style.css" />-->
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/products.css">
   <link rel="stylesheet" href="/css/cart.css">
   <link rel="stylesheet" href="/css/modal.css">
-  <link rel="stylesheet" href="local.css">
-</head>
 
-<body data-type="services">
+</head>
+<body>
   <header>
     <div class="container">
       <div class="header-content">
         <div class="logo">
           <img src="/r2-images/BB-logo.png" alt="Ben's Bikes logo" class="logo-image" />
-          <span class="logo-text">Ben's Bikes: Services</span>
+          <span class="logo-text">Ben's Bikes: For Sale</span>
         </div>
         <button id="cartToggleBtn" class="cart-toggle-btn">🛒 Cart (<span id="cartCount">0</span>)</button>
         <div id="nav-placeholder"></div>
@@ -27,21 +27,20 @@
 
   <main class="container">
     <!-- Category Filter Bar -->
-    <!--
+     <!--
     <div class="filter-bar" id="categoryFilters">
       <button class="filter-btn active" data-category="all">All</button>
-      <button class="filter-btn" data-category="TUNE">Tune-Ups</button>
-      <button class="filter-btn" data-category="REPAIR">Repairs</button>
-      <button class="filter-btn" data-category="CUSTOM">Custom Builds</button>
+      <button class="filter-btn" data-category="ROAD">Road Bikes</button>
+      <button class="filter-btn" data-category="MTX">Motocross</button>
+      <button class="filter-btn" data-category="RESTORE">Restore</button>
     </div>
   -->
-    
-    <!-- Service Gallery -->
+    <!-- Product Gallery -->
     <div class="gallery" id="gallery">
-      <!-- Services will be inserted here by JavaScript -->
+      <!-- Products will be inserted here by JavaScript -->
     </div>
 
-    <!-- Service Modal -->
+    <!-- Product Modal -->
     <div id="productModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
@@ -72,8 +71,9 @@
   </div>
 
   <!-- JavaScript entry point -->
-  <script type="module" src="/js/main.js"></script>
+  <script type="module" src="./main.js"></script>
   <script src="/js/inject-nav.js"></script>
   <script src="/js/inject-footer.js"></script>
+
 </body>
 </html>
