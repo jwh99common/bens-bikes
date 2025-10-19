@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ben's Bikes – Motorcycle Services</title>
-  <!--<link rel="stylesheet" href="/css/style.css" />-->
+  <title>Ben's Bikes – Blog Posts</title>
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/products.css">
   <link rel="stylesheet" href="/css/cart.css">
   <link rel="stylesheet" href="/css/modal.css">
   <link rel="stylesheet" href="/css/blog.css">
   <link rel="stylesheet" href="local.css">
-
 </head>
+
 <body data-type="blogs">
   <header>
     <div class="container">
@@ -21,38 +22,57 @@
           <img src="/r2-images/BB-logo.png" alt="Ben's Bikes logo" class="logo-image" />
           <span class="logo-text">Ben's Bikes: Blog</span>
         </div>
+        <button id="cartToggleBtn" class="cart-toggle-btn">🛒 Cart (<span id="cartCount">0</span>)</button>
         <div id="nav-placeholder"></div>
       </div>
     </div>
   </header>
 
   <main class="container">
+    <!-- Blog Gallery -->
     <div class="gallery" id="gallery">
-      <!-- Blog cards will be injected here -->
+      <!-- Blog cards will be inserted here by JavaScript -->
+    </div>
+
+    <!-- Unified Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <div class="modal-header">
+          <img id="modalImage" class="modal-thumb" src="" alt="" />
+          <h2 id="modalTitle"></h2>
+        </div>
+
+        <div class="modal-body">
+          <p id="modalAuthor" class="modal-author"></p>
+          <p id="modalDate" class="modal-date"></p>
+          <div id="modalContent" class="modal-content-text"></div>
+
+          <div class="image-carousel">
+            <button id="prevImage" class="carousel-btn left-btn" aria-label="Previous image">‹</button>
+            <div id="imageCounter" class="modal-counter"></div>
+            <button id="nextImage" class="carousel-btn right-btn" aria-label="Next image">›</button>
+          </div>
+
+          <div class="product-details">
+            <span id="modalPrice" class="product-price"></span>
+            <span id="modalCategory" class="product-category"></span>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 
-  <!-- Blog Modal -->
-  <div id="blogModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-
-      <div class="modal-header">
-        <img id="modalImage" class="modal-thumb" src="" alt="" />
-        <h2 id="modalTitle"></h2>
-      </div>
-
-      <div class="modal-body">
-        <p id="modalAuthor" class="modal-author"></p>
-        <p id="modalDate" class="modal-date"></p>
-        <div id="modalContent" class="modal-content-text"></div>
-        <div id="imageCounter" class="modal-counter"></div>
-      </div>
-    </div>
+  <!-- Cart Panel -->
+  <div id="cartPanel" class="cart-panel hidden">
+    <h3>Your Cart</h3>
+    <ul id="cartItems"></ul>
+    <button id="checkoutBtn">Checkout</button>
   </div>
 
-  <!-- JavaScript entry point -->
-  <script type="module" src="./main.js"></script>
+  <!-- Scripts -->
+  <script type="module" src="/js/main.js"></script>
   <script src="/js/inject-nav.js"></script>
   <script src="/js/inject-footer.js"></script>
 </body>
