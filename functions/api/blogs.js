@@ -3,7 +3,7 @@
 export async function onRequest(context) {
   const db = context.env.gallery_db;
 
-  console.log("🔍 D1 query triggered from /functions/api/blog.js");
+  //console.log("🔍 D1 query triggered from /functions/api/blog.js");
 
   const { results } = await db.prepare("SELECT * FROM bens_bikes_blogs ORDER BY createdAt DESC").all();
 
@@ -28,10 +28,10 @@ export async function onRequest(context) {
   }));
 
 
-  console.log("📦 D1 returned blogs:");
-  blogs.forEach((blogs, i) => {
-    console.log(`🔹 blogs ${i + 1}: ${blogs.title}`);
-  });
+  //console.log("📦 D1 returned blogs:");
+  //blogs.forEach((blogs, i) => {
+  //  console.log(`🔹 blogs ${i + 1}: ${blogs.title}`);
+  //});
 
   return Response.json(blogs);
 }

@@ -83,9 +83,10 @@ export function formatBlog(item) {
 }
 
 
+
 export function formatGallery(item) {
   return `
-    <img src="${item.image}" alt="${item.title}" class="gallery-image" />
+    <img src="${item.image}" alt="${item.title}" class="product-image" />
     <div class="gallery-info">
       <h3>${item.title}</h3>
       <p>${item.description || ''}</p>

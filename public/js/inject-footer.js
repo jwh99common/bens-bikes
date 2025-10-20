@@ -1,5 +1,5 @@
 async function injectFooter() {
-  const res = await fetch('/bb-footer.html');
+  const res = await fetch('/partials/bb-footer.html');
   const html = await res.text();
   const container = document.createElement('div');
   container.innerHTML = html;

@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bens Bikes – Motorcycle Services</title>
+  <title>Ben's Bikes – Gallery</title>
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/products.css">
   <link rel="stylesheet" href="/css/cart.css">
   <link rel="stylesheet" href="/css/modal.css">
   <link rel="stylesheet" href="/gallery/local.css?v=5">
-
-
 </head>
-<body data-type="gallery" >
+
+<body data-type="gallery">
   <header>
     <div class="container">
       <div class="header-content">
@@ -20,6 +19,11 @@
           <img src="/r2-images/BB-logo.png" alt="Ben's Bikes logo" class="logo-image" />
           <span class="logo-text">Ben's Bikes: Gallery</span>
         </div>
+
+        <!-- Cart Toggle Button -->
+        <button id="cartToggleBtn" class="cart-toggle-btn">
+          🛒 Cart (<span id="cartCount">0</span>)
+        </button>
 
         <!-- Navigation will be injected here -->
         <div id="nav-placeholder"></div>
@@ -29,17 +33,20 @@
 
   <main class="container">
     <div class="gallery" id="gallery">
-      <!-- Products will be inserted here by JavaScript -->
+      <!-- Gallery items will be injected by JavaScript -->
     </div>
-
-
   </main>
 
+  <!-- Unified Cart Panel -->
+  <div id="cartPanel" class="cart-panel hidden">
+    <h3>Your Cart</h3>
+    <ul id="cartItems"></ul>
+    <button id="checkoutBtn">Checkout</button>
+  </div>
 
   <!-- JavaScript entry point -->
-  <script type="module" src="./main.js"></script>
+  <script type="module" src="/js/main.js"></script>
   <script src="/js/inject-nav.js"></script>
   <script src="/js/inject-footer.js"></script>
-
 </body>
 </html>

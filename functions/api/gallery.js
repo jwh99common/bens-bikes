@@ -1,7 +1,7 @@
 export async function onRequest(context) {
   const db = context.env.gallery_db;
   
-  console.log("🔍 D1 query triggered from /functions/api/gallery.js");
+  //console.log("🔍 D1 query triggered from /functions/api/gallery.js");
   
   const { results } = await db.prepare("SELECT * FROM bens_bikes_gallery").all();
   
@@ -17,10 +17,10 @@ export async function onRequest(context) {
   }));
 
   
-  console.log("📦 D1 returned gallery:");
-  products.forEach((product, i) => {
-    console.log(`🔹 Product ${i + 1}: ${product.title} ${product.image}`);
-  });
+  //console.log("📦 D1 returned gallery:");
+  //products.forEach((product, i) => {
+  // console.log(`🔹 Product ${i + 1}: ${product.title} ${product.image}`);
+  //});
 
   return Response.json(products);
 }
