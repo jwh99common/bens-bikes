@@ -6,7 +6,7 @@ export function openModal(item) {
   if (!modal) return;
 
   const type = item.type || document.body.dataset.type || 'products';
-  console.log(`Modal Type: ${type}`);
+  //console.log(`Modal Type: ${type}`);
 
   const modalImage = document.getElementById('modalImage');
   const modalTitle = document.getElementById('modalTitle');
