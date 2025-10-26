@@ -85,7 +85,8 @@ export function formatBlog(item) {
 
 
 export function formatGallery(item) {
-  console.log(`${item.image}`); // ✅ logs actual image value
+  //console.log(`${item.image}`); // ✅ logs actual image value
+
   return `
     <img src="${item.image}" alt="${item.title}" class="product-image" />
     <div class="gallery-info">
