@@ -1,2 +1,4 @@
 /js/*.js
   Cache-Control: no-cache
+/*/*.html
+  Cache-Control: no-cache
