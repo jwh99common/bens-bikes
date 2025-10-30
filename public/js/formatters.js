@@ -93,7 +93,7 @@ export function formatBlog(item) {
           <p>${item.author || ''}</p>
           <p>${item.shortcontent || ''}</p>
           <span class="blog-card-date">${new Date(item.createdAt).toLocaleDateString()}</span>
-          <a href="/blog/${item.slug}" class="read-more">Read more →</a>
+          <a href="/blog-slug/${item.slug}" class="read-more">Read more →</a>
 
         </div>
       </div>
