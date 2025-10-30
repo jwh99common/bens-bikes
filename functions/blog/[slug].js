@@ -2,6 +2,8 @@ export async function onRequest(context) {
   const slug = context.params.slug;
   const db = context.env.gallery_db;
 
+  console.log ("Slug:", slug);
+  
   const { results } = await db
     .prepare("SELECT * FROM bens_bikes_blogs WHERE slug = ?")
     .bind(slug)
