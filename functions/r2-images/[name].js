@@ -3,7 +3,7 @@ export async function onRequest(context) {
   const bucket = context.env.r2_images; // ✅ matches binding name
 
   //console.log(`Fetching image: ${imageName} from ${bucket}`);
-  console.log(`📦 Fetching image: ${imageName} from R2 bucket: ${bucket?.name || '[binding: r2_images]'}`);
+  //console.log(`📦 Fetching image: ${imageName} from R2 bucket: ${bucket?.name || '[binding: r2_images]'}`);
 
   if (!bucket || typeof bucket.get !== "function") {
     console.warn("R2 binding 'r2_images' not available");

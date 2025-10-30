@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   const type = document.body.dataset.type || 'products';
 
   // ✅ Debug: confirm JS execution and hostname
-  console.log("Main.js loaded:", location.hostname);
+  // console.log("Main.js loaded:", location.hostname);
   
-  console.log("🚀 Cache bust test at", new Date().toISOString());
+  //console.log("🚀 Cache bust test at", new Date().toISOString());
 
-  console.log ("FFS");
+  //console.log ("FFS");
   
   // document.body.insertAdjacentHTML('beforeend', `
   //  <div style="background:#f00; color:#fff; padding:0.5rem; font-size:0.8rem;">
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const galleryEl = document.getElementById('gallery');
   if (galleryEl) {
     const items = await loadGallery(type);
-    console.log("Loaded gallery items:", items);
+    //console.log("Loaded gallery items:", items);
     renderGallery(items, type);
     setupFilters(items, type);
     setupModal();
