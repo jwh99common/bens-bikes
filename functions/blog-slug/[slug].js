@@ -69,7 +69,9 @@ export async function onRequest(context) {
       </footer>
 
       <!-- Scripts -->
-      <script type="module" src="/js/main.js"></script>
+      
+      <script type="module" src="/js/new-main.js?v=20251030"></script>
+
       <script src="/js/inject-nav.js"></script>
       <script src="/js/inject-footer.js"></script>
     </body>
