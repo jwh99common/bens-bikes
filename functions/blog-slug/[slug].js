@@ -28,7 +28,7 @@ export async function onRequest(context) {
       <link rel="stylesheet" href="/css/products.css">
       <link rel="stylesheet" href="/css/cart.css">
       <link rel="stylesheet" href="/css/blog.css">
-      <link rel="stylesheet" href="/blog-pages/local.css">
+      <link rel="stylesheet" href="/blogs/local.css">
     </head>
 
     <body data-type="blog">
