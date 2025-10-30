@@ -28,7 +28,7 @@ export async function onRequest(context) {
       <link rel="stylesheet" href="/css/products.css">
       <link rel="stylesheet" href="/css/cart.css">
       <link rel="stylesheet" href="/css/blog.css">
-      <link rel="stylesheet" href="/blogs/local.css">
+      <link rel="stylesheet" href="/blogs-page/local.css">
     </head>
 
     <body data-type="blog">
@@ -48,12 +48,12 @@ export async function onRequest(context) {
       <main class="container blog-page">
         <h1>${blog.title}</h1>
         <p class="blog-card-date">${new Date(blog.createdAt).toLocaleDateString()}</p>
-        <p class="modal-author">${blog.author || ''}</p>
+        <p class="modal-author">Author: ${blog.author || ''}</p>
         <img src="${blog.image}" alt="${blog.title}" class="modal-thumb" />
-        <div class="modal-content-text">${blog.longcontent || blog.content || ''}</div>
+        <div class="modal-content-text">Content: ${blog.longcontent || blog.content || ''}</div>
 
         <p class="back-link">
-          <a href="/blogs">← Back to all blog posts</a>
+          <a href="/blogs-page">← Back to all blog posts</a>
         </p>
       </main>
 
