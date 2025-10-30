@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const type = document.body.dataset.type || 'products';
 
   // ✅ Debug: confirm JS execution and hostname
-  // console.log("Main.js loaded:", location.hostname);
+  console.log("Main.js loaded:", location.hostname);
 
   
   // document.body.insertAdjacentHTML('beforeend', `
