@@ -98,20 +98,6 @@
   text-decoration: underline;
 }
 
-
-.read-more {
-  display: inline-block;
-  margin-top: 0.5rem;
-  color: #0077cc;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 0.9rem;
-}
-
-.read-more:hover {
-  text-decoration: underline;
-}
-
 /* === Responsive Stack for Mobile === */
 @media (max-width: 600px) {
   .blog-card-layout,

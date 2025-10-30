@@ -24,6 +24,8 @@ export async function onRequest(context) {
     author: p.author,
     image: p.image,
     content: p.content,
+    shortcontent: p.shortcontent,
+    longcontent: p.longcontent,
     createdAt: p.createdAt
   }));
 

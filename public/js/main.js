@@ -3,22 +3,30 @@ import { setupModal, openModal } from './modal.js';
 import { addToCart, updateCartCount, renderCartPanel } from './cart.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const type = document.body.dataset.type || 'products'; // e.g. 'product', 'service', 'bundle'
-  const items = await loadGallery(`${type}`); // calls /api/products, /api/services, etc.
+  const type = document.body.dataset.type || 'products';
 
-  renderGallery(items, type);
-  setupFilters(items, type);
-  setupModal();
+  // Always run cart setup
   setupCart();
-  setupAddToCart(items);
-  setupModalTriggers(items);
+
+  // Only run gallery logic if #gallery exists
+  const galleryEl = document.getElementById('gallery');
+  if (galleryEl) {
+    const items = await loadGallery(type);
+    renderGallery(items, type);
+    setupFilters(items, type);
+    setupModal();
+    setupAddToCart(items);
+    setupModalTriggers(items);
+  }
 });
 
 function setupCart() {
   updateCartCount();
   renderCartPanel();
+
   const toggleBtn = document.getElementById('cartToggleBtn');
   const cartPanel = document.getElementById('cartPanel');
+
   if (toggleBtn && cartPanel) {
     toggleBtn.addEventListener('click', () => {
       cartPanel.classList.toggle('hidden');
@@ -46,7 +54,10 @@ function setupAddToCart(items) {
 }
 
 function setupModalTriggers(items) {
-  document.getElementById('gallery').addEventListener('click', (e) => {
+  const gallery = document.getElementById('gallery');
+  if (!gallery) return;
+
+  gallery.addEventListener('click', (e) => {
     if (e.target.classList.contains('add-to-cart')) return;
     const card = e.target.closest('.product-card');
     if (card && card.dataset.id) {

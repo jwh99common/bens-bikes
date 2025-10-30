@@ -71,16 +71,24 @@ export function formatMerchandise(item) {
 
 export function formatBlog(item) {
   return `
-    <div class="blog-card-layout">
-      <img src="${item.image}" alt="${item.title}" class="blog-card-image" />
-      <div class="blog-card-info">
-        <h3>${item.title}</h3>
-        <p>${item.excerpt || item.description || ''}</p>
-        <span class="blog-card-date">${new Date(item.createdAt).toLocaleDateString()}</span>
+    <div class="blogs-card">
+      <div class="blog-card-layout">
+        <img src="${item.image}" alt="${item.title}" class="blog-card-image" />
+        <div class="blog-card-info">
+          <h3>${item.title}</h3>
+          <p>${item.author || ''}</p>
+          <p>${item.shortcontent || ''}</p>
+          <span class="blog-card-date">${new Date(item.createdAt).toLocaleDateString()}</span>
+          <a href="/blog/${item.slug}" class="read-more">Read more →</a>
+
+        </div>
       </div>
     </div>
   `;
 }
+
+
+
 
 
 
