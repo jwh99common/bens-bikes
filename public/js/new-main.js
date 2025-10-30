@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   
   console.log("🚀 Cache bust test at", new Date().toISOString());
 
+  console.log ("FFS");
   
   // document.body.insertAdjacentHTML('beforeend', `
   //  <div style="background:#f00; color:#fff; padding:0.5rem; font-size:0.8rem;">
