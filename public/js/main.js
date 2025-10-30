@@ -5,6 +5,14 @@ import { addToCart, updateCartCount, renderCartPanel } from './cart.js';
 document.addEventListener('DOMContentLoaded', async () => {
   const type = document.body.dataset.type || 'products';
 
+  // ✅ Debug: confirm JS execution and hostname
+  console.log("Main.js loaded on:", location.hostname);
+  document.body.insertAdjacentHTML('beforeend', `
+    <div style="background:#f00; color:#fff; padding:0.5rem; font-size:0.8rem;">
+      JS executed on: ${location.hostname}
+    </div>
+  `);
+
   // Always run cart setup
   setupCart();
 
@@ -12,6 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const galleryEl = document.getElementById('gallery');
   if (galleryEl) {
     const items = await loadGallery(type);
+    console.log("Loaded gallery items:", items);
     renderGallery(items, type);
     setupFilters(items, type);
     setupModal();
