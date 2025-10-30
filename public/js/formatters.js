@@ -1,6 +1,14 @@
 // formatters.js
 
 export function formatProduct(item) {
+
+
+  console.log("Blog Debug:", {
+    title: item.title,
+    author: item.author,
+    shortcontent: item.shortcontent?.slice(0, 100) || ''
+  });
+
   return `
     <img src="${item.image}" alt="${item.title}" class="product-image" />
     <div class="product-info">
@@ -70,6 +78,12 @@ export function formatMerchandise(item) {
 }
 
 export function formatBlog(item) {
+  
+  console.log("Blog Debug:", {
+    title: item.title,
+    author: item.author,
+    shortcontent: item.shortcontent?.slice(0, 100) || ''
+  });
   return `
     <div class="blogs-card">
       <div class="blog-card-layout">
