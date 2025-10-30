@@ -6,14 +6,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   const type = document.body.dataset.type || 'products';
 
   // ✅ Debug: confirm JS execution and hostname
-  console.log("Main.js loaded:", location.hostname);
+  // console.log("Main.js loaded:", location.hostname);
 
   
-  document.body.insertAdjacentHTML('beforeend', `
-    <div style="background:#f00; color:#fff; padding:0.5rem; font-size:0.8rem;">
-      JS executed on: ${location.hostname}
-    </div>
-  `);
+  // document.body.insertAdjacentHTML('beforeend', `
+  //  <div style="background:#f00; color:#fff; padding:0.5rem; font-size:0.8rem;">
+  //    JS executed on: ${location.hostname}
+  //  </div>
+  //`);
 
   // Always run cart setup
   setupCart();
