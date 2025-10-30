@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // ✅ Debug: confirm JS execution and hostname
   console.log("Main.js loaded:", location.hostname);
+  
+  console.log("🚀 Cache bust test at", new Date().toISOString());
 
   
   // document.body.insertAdjacentHTML('beforeend', `
