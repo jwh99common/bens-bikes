@@ -41,6 +41,8 @@
           <img src="/r2-images/BB-logo.png" alt="Ben's Bikes logo" class="logo-image" />
           <span class="logo-text">Ben's Bikes</span>
         </div>
+        <button id="cartToggleBtn" class="cart-toggle-btn">🛒 Cart (<span id="cartCount">0</span>)</button>
+
         <div id="nav-placeholder"></div>
       </div>
     </div>
@@ -77,6 +79,15 @@
       </div>
     </section>
   </main>
+
+  <!-- Unified Cart Panel -->
+  <div id="cartPanel" class="cart-panel hidden">
+    <h3>Your Cart</h3>
+    <ul id="cartItems"></ul>
+    <button id="checkoutBtn">Checkout</button>
+  </div>
+
+  <script type="module" src="/js/main.js?v=20251030"></script>
 
   <script src="/js/inject-nav.js"></script>
   <script src="/js/inject-footer.js"></script>
