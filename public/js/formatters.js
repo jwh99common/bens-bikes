@@ -89,9 +89,9 @@ export function formatBlog(item) {
       <div class="blog-card-layout">
         <img src="${item.image}" alt="${item.title}" class="blog-card-image" />
         <div class="blog-card-info">
-          <h3>${item.title}</h3>
-          <p>${item.author || ''}</p>
-          <p>${item.shortcontent || ''}</p>
+          <h3>Title: ${item.title}</h3>
+          <p>Author: ${item.author || ''}</p>
+          <p>Shortcontent: ${item.shortcontent || ''}</p>
           <span class="blog-card-date">${new Date(item.createdAt).toLocaleDateString()}</span>
           <a href="/blog-slug/${item.slug}" class="read-more">Read more →</a>
 
