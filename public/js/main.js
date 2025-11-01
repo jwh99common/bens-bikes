@@ -1,6 +1,6 @@
 import { loadGallery, renderGallery, setupFilters } from './gallery.js';
 import { setupModal, openModal } from './modal.js';
-import { addToCart, updateCartCount, renderCartPanel } from './cart.js';
+import { addToCart, updateCartCount, renderCartPanel, wireCheckoutButton } from './cart.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const type = document.body.dataset.type || 'products';
@@ -39,7 +39,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 function setupCart() {
   updateCartCount();
   renderCartPanel();
-
+  wireCheckoutButton(); 
+  
   const toggleBtn = document.getElementById('cartToggleBtn');
   const cartPanel = document.getElementById('cartPanel');
 

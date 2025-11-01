@@ -1,5 +1,6 @@
 const CART_KEY = 'bensBikesCart';
 
+
 export function getCart() {
   return JSON.parse(localStorage.getItem(CART_KEY)) || [];
 }
@@ -74,4 +75,13 @@ export function updateCartUI() {
 export function renderCartPanel() {
   updateCartUI();
   updateCartCount();
+}
+
+export function wireCheckoutButton() {
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener('click', () => {
+      window.location.href = '/checkout.html';
+    });
+  }
 }
