@@ -81,7 +81,7 @@ export function wireCheckoutButton() {
   const checkoutBtn = document.getElementById('checkoutBtn');
   if (checkoutBtn) {
     checkoutBtn.addEventListener('click', () => {
-      window.location.href = '/checkout.html';
+      window.location.href = '/checkout/';
     });
   }
 }

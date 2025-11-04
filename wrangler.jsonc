@@ -21,5 +21,11 @@
 			"database_name": "gallery-db",
 			"database_id": "8a611c67-f995-4899-92af-134e12bf5461"
 		}
-	]
+	],
+	"kv_namespaces": [
+		{
+		"binding": "bens_bikes",
+		"id": "ee0baf6c00ee41c8a377c74b6fbe1ad6"
+		}
+]
 }
