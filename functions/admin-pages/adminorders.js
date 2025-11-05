@@ -7,6 +7,6 @@ export async function onRequest({ request, env }) {
 
   }
 
-  const rewritten = new Request(`${new URL(request.url).origin}/admin-pages/adminblogs.html`, request);
+  const rewritten = new Request(`${new URL(request.url).origin}/admin-pages/admin-orders.html`, request);
   return env.ASSETS.fetch(rewritten);
 }
