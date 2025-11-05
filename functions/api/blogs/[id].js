@@ -3,6 +3,8 @@ export async function onRequest(context) {
   const id = context.params.id;
   const method = context.request.method;
 
+  console.log ("api/blogs", method, id);
+  
   if (!id) {
     return new Response("Missing blog ID", { status: 400 });
   }
@@ -25,7 +27,7 @@ export async function onRequest(context) {
     return new Response("Blog deleted", { status: 200 });
   }
 
-  if (method === "PUT") {
+  if (method === "PUT" || method === "POST") {
     const body = await context.request.json();
     const { title, slug, author, image, content, shortcontent, longcontent } = body;
 

@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const payload = getFormData(form);
     const method = payload.id ? 'PUT' : 'POST';
-    const endpoint = payload.id ? `/api/blogs/${payload.id}` : '/api/admin';
+    //const endpoint = payload.id ? `/api/blogs/${payload.id}` : '/api/admin';
+    const endpoint = payload.id ? `/api/blogs/${payload.id}` : '/api/admin-blogs';
 
     const res = await fetch(endpoint, {
       method,
