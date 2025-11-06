@@ -113,7 +113,7 @@ export function formatGallery(item) {
     <img src="${item.image}" alt="${item.title}" class="product-image" />
     <div class="gallery-info">
       <h3>${item.title}</h3>
-      <p>${item.description || ''}</p>
+      <!--<p>${item.description || ''}</p>-->
     </div>
   `;
 }
