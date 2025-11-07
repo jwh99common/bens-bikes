@@ -17,6 +17,7 @@ export function formatProduct(item) {
       <div class="product-details">
         <span class="product-price">£${item.price}</span>
         <span class="product-category">${item.category}</span>
+        <span class="product-category">${item.image}</span>
       </div>
       <button class="add-to-cart"
         data-id="${item.id}"
