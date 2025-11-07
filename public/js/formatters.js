@@ -114,6 +114,7 @@ export function formatGallery(item) {
     <div class="gallery-info">
       <h3>${item.title}</h3>
       <!--<p>${item.description || ''}</p>-->
+      <p>Image ID: ${item.image}</p>
     </div>
   `;
 }
