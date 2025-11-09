@@ -1,1 +1,3 @@
-/admin-pages/*  /admin-login  403!
+/admin-pages  /admin-login  403!
+/admin-pages/admin-orders  /admin-login  403!
+/admin-pages/admin-orders.html  /admin-login  403!
