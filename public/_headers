@@ -8,5 +8,8 @@
   Cache-Control: no-cache
 /*/*.css
   Cache-Control: no-cache
+/admin-pages/*
+  X-Robots-Tag: noindex
+  Cache-Control: no-store
 
 
