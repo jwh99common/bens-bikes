@@ -12,7 +12,9 @@
       "/r2-images/b3.jpg",
       "/r2-images/b4.jpg"
     ],
-    "longDescription": "nice bike, good condition, low mileage. Recently serviced with new tires and brake pads. Perfect for city commuting or weekend rides. Contact for more details or to arrange a viewing."
+    "longDescription": "nice bike, good condition, low mileage. Recently serviced with new tires and brake pads. Perfect for city commuting or weekend rides. Contact for more details or to arrange a viewing.",
+    "status": "active "
+
   },
   {
     "id": 2,

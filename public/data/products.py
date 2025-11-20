@@ -17,6 +17,7 @@ for p in products:
     description = escape(p['description'])
     category = escape(p['category'])
     long_desc = escape(p['longDescription'])
+    status = escape(p['status'])
 
     # Escape main image
     image = escape(p['image'])
@@ -26,8 +27,8 @@ for p in products:
     images_escaped = escape(images_json)
 
     # Build SQL insert
-    line = f"""INSERT INTO bens_bikes_products (id, title, description, price, category, image, images, longDescription)
-VALUES ({p['id']}, '{title}', '{description}', {p['price']}, '{category}', '{image}', '{images_escaped}', '{long_desc}');"""
+    line = f"""INSERT INTO bens_bikes_products (id, title, description, price, category, image, images, longDescription, status)
+VALUES ({p['id']}, '{title}', '{description}', {p['price']}, '{category}', '{image}', '{images_escaped}', '{long_desc}', '{status}');"""
     lines.append(line)
 
 # Optional: inspect inserted image data

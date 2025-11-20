@@ -8,6 +8,7 @@ export function formatProduct(item) {
   //  author: item.author,
   //  shortcontent: item.shortcontent?.slice(0, 100) || ''
   //});
+  const formattedPrice = (item.price / 100).toFixed(2);
 
   return `
     <img src="${item.image}" alt="${item.title}" class="product-image" />
@@ -15,14 +16,14 @@ export function formatProduct(item) {
       <h3>${item.title}</h3>
       <p>${item.description}</p>
       <div class="product-details">
-        <span class="product-price">£${item.price}</span>
+        <span class="product-price">£${formattedPrice}</span>
         <span class="product-category">${item.category}</span>
         <span class="product-category">${item.image}</span>
       </div>
       <button class="add-to-cart"
         data-id="${item.id}"
         data-title="${item.title}"
-        data-price="${item.price}"
+        data-price="${formattedPrice}"
         data-image="${item.image}"
         data-type="product"
       >
@@ -33,19 +34,22 @@ export function formatProduct(item) {
 }
 
 export function formatService(item) {
+
+  const formattedPrice = (item.price / 100).toFixed(2);
+
   return `
     <img src="${item.image}" alt="${item.title}" class="product-image" />
     <div class="product-info">
       <h3>${item.title}</h3>
       <p>${item.description}</p>
       <div class="product-details">
-        <span class="product-price">£${item.price}</span>
+        <span class="product-price">£${formattedPrice}</span>
         <span class="product-category">${item.category}</span>
       </div>
       <button class="add-to-cart"
         data-id="${item.id}"
         data-title="${item.title}"
-        data-price="${item.price}"
+        data-price="${formattedPrice}"
         data-image="${item.image}"
         data-type="service"
       >
@@ -56,19 +60,22 @@ export function formatService(item) {
 }
 
 export function formatMerchandise(item) {
+
+  const formattedPrice = (item.price / 100).toFixed(2);
+
   return `
     <img src="${item.image}" alt="${item.title}" class="product-image" />
     <div class="product-info">
       <h3>${item.title}</h3>
       <p>${item.description}</p>
       <div class="product-details">
-        <span class="product-price">£${item.price}</span>
+        <span class="product-price">£${formattedPrice}</span>
         <span class="product-category">${item.category}</span>
       </div>
       <button class="add-to-cart"
         data-id="${item.id}"
         data-title="${item.title}"
-        data-price="${item.price}"
+        data-price="${formattedPrice}"
         data-image="${item.image}"
         data-type="merchandise"
       >
@@ -85,6 +92,8 @@ export function formatBlog(item) {
   //  author: item.author,
   //  shortcontent: item.shortcontent?.slice(0, 100) || ''
   //});
+
+
   return `
     <div class="blogs-card">
       <div class="blog-card-layout">
