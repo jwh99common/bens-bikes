@@ -23,7 +23,7 @@ export async function onRequest(context) {
 
   try {
     const { results } = await db
-      .prepare("SELECT slug, created_at FROM ej_antiques_products")
+      .prepare("SELECT title FROM bens_bikes_products")
       .all();
 
     productUrls = results.map(row => {
