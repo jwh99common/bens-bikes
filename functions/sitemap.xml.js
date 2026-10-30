@@ -1,6 +1,6 @@
 export async function onRequest(context) {
   const db = context.env.gallery_db;
-  const BASE_URL = "https://ej-antiques.co.uk";
+  const BASE_URL = "https://bens-bikes.co.uk";
 
   /* -------------------------------------------------------
      1. STATIC PAGES (manual list)
